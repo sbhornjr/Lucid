@@ -1,5 +1,9 @@
 * text=auto
 
+# Line endings
+* text eol=crlf
+* text eol=lf
+
 # Unity files
 *.meta -text merge=unityyamlmerge diff
 *.unity -text merge=unityyamlmerge diff
