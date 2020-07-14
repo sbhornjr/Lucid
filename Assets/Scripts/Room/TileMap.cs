@@ -15,7 +15,7 @@ public class TileMap : MonoBehaviour
     void Awake()
     {
         mRoomGridGeneration = GetComponent<RoomGridGeneration>();
-        // mTiles = mRoomGridGeneration.GenerateRoom(); 
+        // mTiles = mRoomGridGeneration.GenerateRoom();
     }
 
     public void GenerateRoom()
