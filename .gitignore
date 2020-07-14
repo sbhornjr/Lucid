@@ -5,6 +5,9 @@
 [Bb]uilds/
 [Ll]ogs/
 
+# Heavy folder - for heavy assets
+Assets/Heavy/
+
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
 
