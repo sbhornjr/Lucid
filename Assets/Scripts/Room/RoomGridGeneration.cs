@@ -62,12 +62,7 @@ public class RoomGridGeneration : MonoBehaviour
             }
         }
 
-        // Fill all walls
-        foreach (var wall in mRoomTemplate.walls)
-        {
-            tiles[wall.index].IsWall = true;
-        }
-
+        // Fill border
         for (uint z = 0; z < height; z++)
         {
             tiles[z * width].IsWall = true;
@@ -80,6 +75,20 @@ public class RoomGridGeneration : MonoBehaviour
                     tiles[i].IsWall = true;
                 }
             }
+        }
+
+        // Fill all other walls
+        foreach (var wall in mRoomTemplate.walls)
+        {
+            tiles[wall.index].IsWall = true;
+        }
+
+        // Fill all enemy nests
+        foreach (var nest in mRoomTemplate.enemyNests)
+        {
+            // For my sanity 
+            if (tiles[nest.index].IsWall) throw new System.Exception("json is screwy");
+            tiles[nest.index].IsEnemyNest = true;
         }
 
         return tiles;

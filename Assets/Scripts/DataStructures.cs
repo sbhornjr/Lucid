@@ -66,6 +66,8 @@ public class Tile
 
     public bool IsWall { get; set; }
 
+    public bool IsEnemyNest { get; set; }
+
     public Tile(uint index)
     {
         Index = index;
@@ -78,6 +80,13 @@ public class Tile
         BotLeft = new Vector3(X * GameUtils.TileSize, 0f, (Z + 1) * GameUtils.TileSize);
         BotRight = new Vector3((X + 1) * GameUtils.TileSize, 0f, (Z + 1) * GameUtils.TileSize);
         Center = new Vector3(X * GameUtils.TileSize + GameUtils.TileSize / 2, 0f, Z * GameUtils.TileSize + GameUtils.TileSize / 2);
+    }
+
+    public Color GetColor()
+    {
+        return IsWall ? Color.black
+            : IsEnemyNest ? Color.red
+            : Color.gray;
     }
 
     internal bool TryGetNeighborIndex(Direction direction, out uint index)
@@ -122,9 +131,16 @@ public class RoomTemplate
 {
     public Dimensions dimensions;
     public Wall[] walls;
+    public EnemyNest[] enemyNests;
 
     [Serializable]
     public class Wall
+    {
+        public uint index;
+    }
+
+    [Serializable]
+    public class EnemyNest
     {
         public uint index;
     }
