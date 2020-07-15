@@ -86,9 +86,17 @@ public class RoomGridGeneration : MonoBehaviour
         // Fill all enemy nests
         foreach (var nest in mRoomTemplate.enemyNests)
         {
-            // For my sanity 
-            if (tiles[nest.index].IsWall) throw new System.Exception("json is screwy");
             tiles[nest.index].IsEnemyNest = true;
+        }
+
+        // Fill the rest
+        foreach (var treasure in mRoomTemplate.treasures)
+        {
+            tiles[treasure.index].IsTreasure = true;
+        }
+        foreach (var poi in mRoomTemplate.pois)
+        {
+            tiles[poi.index].POIType = GameUtils.GetPOIType(poi.type);
         }
 
         return tiles;

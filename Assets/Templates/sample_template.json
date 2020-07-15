@@ -10,7 +10,20 @@
     ], 
 
     "enemyNests": [
-    	{"index": 121},
-    	{"index": 33}
+        {
+            "index": 35,
+            "spawnRadius": 3,
+            "spawnChance": 1,
+            "spawnMin": 0, 
+            "spawnMax": 2
+        } 
+    ], 
+
+    "pois": [
+    	{"index": 151, "type": "TotemHealth"}
+    ], 
+
+    "treasures": [
+    	{"index": 127}
     ]
 }

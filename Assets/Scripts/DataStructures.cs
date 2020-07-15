@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class GameUtils
@@ -35,6 +37,23 @@ public class GameUtils
         return index / Width;
     }
 
+    public static POIType GetPOIType(string poiString)
+    {
+        switch (poiString)
+        {
+            case "Vendor": return POIType.Vendor;
+            case "TotemHealth": return POIType.TotemHealth;
+            case "TotemGold": return POIType.TotemGold;
+            case "TotemMystery": return POIType.TotemMystery;
+            default: return POIType.NONE;
+        }
+    }
+
+}
+
+public enum POIType
+{
+    NONE, Vendor, TotemHealth, TotemGold, TotemMystery
 }
 
 public enum Direction
@@ -48,6 +67,8 @@ public class RoomTemplate
     public Dimensions dimensions;
     public Wall[] walls;
     public EnemyNest[] enemyNests;
+    public POI[] pois;
+    public Treasure[] treasures;
 
     [Serializable]
     public class Wall
@@ -57,6 +78,22 @@ public class RoomTemplate
 
     [Serializable]
     public class EnemyNest
+    {
+        public uint index;
+        public uint spawnRadius;
+        public uint spawnChance;
+        public uint spawnMin, spawnMax;
+    }
+
+    [Serializable]
+    public class POI
+    {
+        public uint index; 
+        public string type;
+    }
+
+    [Serializable]
+    public class Treasure
     {
         public uint index;
     }
