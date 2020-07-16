@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics.SymbolStore;
-using System.Runtime.Serialization;
-using UnityEngine;
 
 public class GameUtils
 {
@@ -81,8 +76,8 @@ public class RoomTemplate
     {
         public uint index;
         public uint spawnRadius;
-        public uint spawnChance;
-        public uint spawnMin, spawnMax;
+        public float spawnChance;
+        public uint spawnAttemptsMin, spawnAttemptsMax;
     }
 
     [Serializable]

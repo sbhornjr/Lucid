@@ -6,16 +6,19 @@
     },
 
     "walls": [
-        {"index": 32}
+        {"index": 32},
+        {"index": 221},
+        {"index": 222},
+        {"index": 252}
     ], 
 
     "enemyNests": [
         {
-            "index": 35,
+            "index": 251,
             "spawnRadius": 3,
-            "spawnChance": 1,
-            "spawnMin": 0, 
-            "spawnMax": 2
+            "spawnChance": 0.5,
+            "spawnAttemptsMin": 10, 
+            "spawnAttemptsMax": 20
         } 
     ], 
 

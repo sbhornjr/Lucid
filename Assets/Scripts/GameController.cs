@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     private RoomGridGeneration mRoomGridGeneration;
     private RoomGridMesh mRoomGridMesh;
     private PlayerMovement mPlayerMovement;
+    private EnemySpawner mEnemySpawner;
 
     private void Awake()
     {
@@ -16,19 +17,23 @@ public class GameController : MonoBehaviour
         mTileMap = FindObjectOfType<TileMap>();
         mRoomGridGeneration = FindObjectOfType<RoomGridGeneration>();
         mRoomGridMesh = FindObjectOfType<RoomGridMesh>();
-        mPlayerMovement = FindObjectOfType<PlayerMovement>(); 
+        mPlayerMovement = FindObjectOfType<PlayerMovement>();
+        mEnemySpawner = GetComponent<EnemySpawner>();
     }
 
     // Start is called before the first frame update
     void Start()
     { 
         // Read game dimensions first
-        mRoomGridGeneration.ReadRoomDimensions();
+        var roomTemplate = mRoomGridGeneration.ReadRoomDimensions();
 
         // Generate the room 
         mTileMap.GenerateRoom();
 
         // Calculate player position
         mPlayerMovement.InitPosition();
+
+        // Spawn enemies
+        mEnemySpawner.SpawnEnemies(roomTemplate);
     }
 }

@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13bcf6995bb0dc04c96ecf39aa912c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seed: 0
+  seed: 45645634
   enemyPrefab: {fileID: 1921064738980093313, guid: 7442c7e15a50be94d9ea6b1497c1618e,
     type: 3}
 --- !u!1001 &3788731424507447655
@@ -386,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 6244463860786477466, guid: 1215229e723247c4dba1cb8300321344,
         type: 3}
       propertyPath: roomTemplatePath
-      value: C:\Users\panic\Documents\GitHub\TemplatedRoomMapTesting\Assets\Templates\test_template.json
+      value: C:\Users\panic\Documents\GitHub\TemplatedRoomMapTesting\Assets\Templates\test_none.json
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1215229e723247c4dba1cb8300321344, type: 3}

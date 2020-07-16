@@ -1,0 +1,41 @@
+{
+  "dimensions": {
+    "width": 30,
+    "height": 20,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 33
+    },
+    {
+      "index": 63
+    },
+    {
+      "index": 64
+    },
+    {
+      "index": 65
+    }
+  ],
+  "enemyNests": [
+    {
+      "index": 66,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    }
+  ],
+  "pois": [
+    {
+      "index": 91,
+      "type": "TotemHealth"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 94
+    }
+  ]
+}

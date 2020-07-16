@@ -18,7 +18,7 @@ public class RoomGridGeneration : MonoBehaviour
         //mRoomTemplate = ReadRoomDimensions(roomTemplatePath);
     }
 
-    public void ReadRoomDimensions()
+    public RoomTemplate ReadRoomDimensions()
     {
         // Read the file into a JSON object
         RoomTemplate roomTemplate;
@@ -33,6 +33,7 @@ public class RoomGridGeneration : MonoBehaviour
         GameUtils.RoomDimensions = dimensions;
 
         mRoomTemplate = roomTemplate;
+        return roomTemplate;
     }
 
     public Tile[] GenerateRoom()

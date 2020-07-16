@@ -12,17 +12,19 @@ public class PlayerMovement : MonoBehaviour
     private TileMap mTileMap;
 
     private uint mIndex;
+    private float mHalfHeight;
 
     private void Awake()
     {
         mTileMap = FindObjectOfType<TileMap>();
+        mHalfHeight = GetComponent<MeshRenderer>().bounds.extents.y;
     }
      
     public void InitPosition()
     {
         mIndex = startingIndex;
 
-        transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
+        transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex) + Vector3.up * mHalfHeight;
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         if (mTileMap.TryMoveToNeighbor(mIndex, direction, out var nextIndex))
         {
             mIndex = nextIndex; 
-            transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
+            transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex) + Vector3.up * mHalfHeight;
         }
     } 
 }

@@ -37,10 +37,8 @@ public class Tile
     public bool IsTreasure { get; set; }
 
     public POIType POIType { get; set; }
-    public bool IsPOI()
-    {
-        return POIType != POIType.NONE;
-    }
+
+    public bool IsPOI { get { return POIType != POIType.NONE; } }
 
     public Tile(uint index)
     {
@@ -61,7 +59,7 @@ public class Tile
         return IsWall ? sColorWall
             : IsEnemyNest ? sColorEnemyNest
             : IsTreasure ? sColorTreasure
-            : IsPOI() ? sColorPOI
+            : IsPOI ? sColorPOI
             : sColorFloor;
     }
      
