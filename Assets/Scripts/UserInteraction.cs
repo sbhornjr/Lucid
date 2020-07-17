@@ -24,8 +24,8 @@ public class UserInteraction : MonoBehaviour
             mRoomGridGeneration.GenerateRoom();
         }
 
-        if (Input.GetMouseButtonUp(0))
-        { 
+        if (Input.GetMouseButtonDown(0))
+        {
             HandleMouseClick(Input.mousePosition);
         }
     }
@@ -37,10 +37,6 @@ public class UserInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out var hit))
         {
             mTileMap.HandleMouseClick(hit.point);
-        }
-        else
-        {
-            Debug.Log("Mouse click missed.");
         }
     }
 }

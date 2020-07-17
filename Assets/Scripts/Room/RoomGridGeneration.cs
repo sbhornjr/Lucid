@@ -12,13 +12,18 @@ public class RoomGridGeneration : MonoBehaviour
 
     private RoomTemplate mRoomTemplate;
 
+    public void setTemplatePath(string path)
+    {
+      roomTemplatePath = path;
+    }
+
     public void Awake()
     {
         mMesh = GetComponentInChildren<RoomGridMesh>();
         //mRoomTemplate = ReadRoomDimensions(roomTemplatePath);
     }
 
-    public RoomTemplate ReadRoomDimensions()
+    public void ReadRoomDimensions()
     {
         // Read the file into a JSON object
         RoomTemplate roomTemplate;
@@ -29,11 +34,10 @@ public class RoomGridGeneration : MonoBehaviour
         }
 
         // Extract dimension data
-        var dimensions = roomTemplate.dimensions; 
+        var dimensions = roomTemplate.dimensions;
         GameUtils.RoomDimensions = dimensions;
 
         mRoomTemplate = roomTemplate;
-        return roomTemplate;
     }
 
     public Tile[] GenerateRoom()
@@ -45,11 +49,11 @@ public class RoomGridGeneration : MonoBehaviour
     }
 
     private Tile[] ParseRoomTemplateFile(string filePath)
-    { 
+    {
         // Extract dimension data from json object
         var dimensions = mRoomTemplate.dimensions;
         var width = dimensions.width;
-        var height = dimensions.height; 
+        var height = dimensions.height;
 
         var tiles = new Tile[width * height];
 
@@ -63,7 +67,12 @@ public class RoomGridGeneration : MonoBehaviour
             }
         }
 
-        // Fill border
+        // Fill all walls
+        foreach (var wall in mRoomTemplate.walls)
+        {
+            tiles[wall.index].IsWall = true;
+        }
+
         for (uint z = 0; z < height; z++)
         {
             tiles[z * width].IsWall = true;
@@ -76,28 +85,6 @@ public class RoomGridGeneration : MonoBehaviour
                     tiles[i].IsWall = true;
                 }
             }
-        }
-
-        // Fill all other walls
-        foreach (var wall in mRoomTemplate.walls)
-        {
-            tiles[wall.index].IsWall = true;
-        }
-
-        // Fill all enemy nests
-        foreach (var nest in mRoomTemplate.enemyNests)
-        {
-            tiles[nest.index].IsEnemyNest = true;
-        }
-
-        // Fill the rest
-        foreach (var treasure in mRoomTemplate.treasures)
-        {
-            tiles[treasure.index].IsTreasure = true;
-        }
-        foreach (var poi in mRoomTemplate.pois)
-        {
-            tiles[poi.index].POIType = GameUtils.GetPOIType(poi.type);
         }
 
         return tiles;

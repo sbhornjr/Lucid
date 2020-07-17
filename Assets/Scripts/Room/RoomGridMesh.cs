@@ -45,7 +45,7 @@ public class RoomGridMesh : MonoBehaviour
 
     private void AddTile(Tile tile)
     {
-        var color = tile.GetColor();
+        var color = tile.IsWall ? Color.black : Color.gray;
 
         // Flip right and left to render through the bottom of the map; this is required to interact with the map from above (clicking, etc)
         AddQuad(tile.TopRight, tile.TopLeft, tile.BotRight, tile.BotLeft, color);
