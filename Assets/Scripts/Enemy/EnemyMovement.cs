@@ -1,17 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
-    private uint startingIndex = 67;
-
-    [SerializeField]
     private uint lineOfSight = 4;
 
-    [SerializeField]
-    private PlayerMovement playerMovement;
+    private PlayerMovement mPlayerMovement;
 
     [SerializeField]
     private Canvas exclCanvas;
@@ -24,16 +21,13 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
+        mPlayerMovement = FindObjectOfType<PlayerMovement>();
+
         mTileMap = FindObjectOfType<TileMap>();
+        mIndex = mTileMap.GetIndexOfTileAt(transform.position);
+
         rand = new System.Random();
-    }
-
-    public void InitPosition()
-    {
-        mIndex = startingIndex;
-
-        transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
-    }
+    } 
 
     public uint MoveEnemy()
     {
@@ -51,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void FollowPlayer()
     {
-        var playerTile = mTileMap.GetCenterPositionOfTileAt(playerMovement.getTile());
+        var playerTile = mTileMap.GetCenterPositionOfTileAt(mPlayerMovement.GetTile());
         var moveToIndex = mIndex;
         var direction = facing;
         var minDistance = Mathf.Infinity;
@@ -124,7 +118,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-
+     
     private bool CheckLoS()
     {
         var checkIndex = mIndex;
@@ -132,7 +126,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (mTileMap.TryMoveToNeighbor(checkIndex, facing, out var nextIndex))
             {
-                if (playerMovement.getTile() == nextIndex)
+                if (mPlayerMovement.GetTile() == nextIndex)
                 {
                     return true;
                 }
@@ -145,7 +139,7 @@ public class EnemyMovement : MonoBehaviour
         return false;
     }
 
-    public uint getTile()
+    public uint GetTile()
     {
         return mIndex;
     }

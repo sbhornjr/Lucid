@@ -1,0 +1,165 @@
+{
+  "dimensions": {
+    "width": 20,
+    "height": 10,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 24
+    },
+    {
+      "index": 35
+    },
+    {
+      "index": 44
+    },
+    {
+      "index": 50
+    },
+    {
+      "index": 55
+    },
+    {
+      "index": 64
+    },
+    {
+      "index": 70
+    },
+    {
+      "index": 75
+    },
+    {
+      "index": 77
+    },
+    {
+      "index": 78
+    },
+    {
+      "index": 82
+    },
+    {
+      "index": 83
+    },
+    {
+      "index": 84
+    },
+    {
+      "index": 85
+    },
+    {
+      "index": 86
+    },
+    {
+      "index": 87
+    },
+    {
+      "index": 88
+    },
+    {
+      "index": 89
+    },
+    {
+      "index": 90
+    },
+    {
+      "index": 115
+    },
+    {
+      "index": 122
+    },
+    {
+      "index": 123
+    },
+    {
+      "index": 124
+    },
+    {
+      "index": 125
+    },
+    {
+      "index": 126
+    },
+    {
+      "index": 127
+    },
+    {
+      "index": 128
+    },
+    {
+      "index": 129
+    },
+    {
+      "index": 130
+    },
+    {
+      "index": 131
+    },
+    {
+      "index": 135
+    },
+    {
+      "index": 144
+    },
+    {
+      "index": 155
+    },
+    {
+      "index": 156
+    },
+    {
+      "index": 157
+    },
+    {
+      "index": 164
+    },
+    {
+      "index": 175
+    }
+  ],
+  "enemyNests": [
+    {
+      "index": 68,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 1,
+      "spawnAttemptsMin": 1
+    },
+    {
+      "index": 142,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 1,
+      "spawnAttemptsMin": 1
+    },
+    {
+      "index": 145,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 1,
+      "spawnAttemptsMin": 1
+    },
+    {
+      "index": 169,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 1,
+      "spawnAttemptsMin": 1
+    }
+  ],
+  "pois": [
+    {
+      "index": 69,
+      "type": "TotemHealth"
+    },
+    {
+      "index": 176,
+      "type": "TotemHealth"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 143
+    }
+  ]
+}

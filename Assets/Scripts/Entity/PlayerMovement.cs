@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private TileMap mTileMap;
 
     private uint mIndex;
+    private float mHalfHeight;
 
     private EnemyMovement[] mEnemyMovements;
 
@@ -19,15 +20,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        mTileMap = FindObjectOfType<TileMap>();
-        mEnemyMovements = FindObjectsOfType<EnemyMovement>();
+        mTileMap = FindObjectOfType<TileMap>();  
+        mHalfHeight = GetComponent<MeshRenderer>().bounds.extents.y; 
     }
      
+    public void FindEnemiesInScene()
+    {
+        mEnemyMovements = FindObjectsOfType<EnemyMovement>();
+    }
+
     public void InitPosition()
     {
         mIndex = startingIndex;
 
-        transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
+        transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex) + Vector3.up * mHalfHeight;
     }
 
     // Update is called once per frame
@@ -55,21 +61,21 @@ public class PlayerMovement : MonoBehaviour
     {
         if (mTileMap.TryMoveToNeighbor(mIndex, direction, out var nextIndex))
         {
-            mIndex = nextIndex; 
-            transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
+            mIndex = nextIndex;  
+            transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex) + Vector3.up * mHalfHeight;
             foreach(EnemyMovement em in mEnemyMovements)
             {
                 if (em != null)
                 {
-                    var enIndex = em.getTile();
+                    var enIndex = em.GetTile();
                     if (enIndex == mIndex) startEncounter.PlayerStartEncounter(em);
                     else if (em.MoveEnemy() == mIndex) startEncounter.EnemyStartEncounter(em);
                 }
-            }
+            } 
         }
     }
 
-    public uint getTile()
+    public uint GetTile()
     {
         return mIndex;
     }

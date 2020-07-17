@@ -18,7 +18,7 @@ public class RoomGridGeneration : MonoBehaviour
         //mRoomTemplate = ReadRoomDimensions(roomTemplatePath);
     }
 
-    public void ReadRoomDimensions()
+    public RoomTemplate ReadRoomDimensions()
     {
         // Read the file into a JSON object
         RoomTemplate roomTemplate;
@@ -33,6 +33,7 @@ public class RoomGridGeneration : MonoBehaviour
         GameUtils.RoomDimensions = dimensions;
 
         mRoomTemplate = roomTemplate;
+        return roomTemplate;
     }
 
     public Tile[] GenerateRoom()
@@ -62,12 +63,7 @@ public class RoomGridGeneration : MonoBehaviour
             }
         }
 
-        // Fill all walls
-        foreach (var wall in mRoomTemplate.walls)
-        {
-            tiles[wall.index].IsWall = true;
-        }
-
+        // Fill border
         for (uint z = 0; z < height; z++)
         {
             tiles[z * width].IsWall = true;
@@ -80,6 +76,28 @@ public class RoomGridGeneration : MonoBehaviour
                     tiles[i].IsWall = true;
                 }
             }
+        }
+
+        // Fill all other walls
+        foreach (var wall in mRoomTemplate.walls)
+        {
+            tiles[wall.index].IsWall = true;
+        }
+
+        // Fill all enemy nests
+        foreach (var nest in mRoomTemplate.enemyNests)
+        {
+            tiles[nest.index].IsEnemyNest = true;
+        }
+
+        // Fill the rest
+        foreach (var treasure in mRoomTemplate.treasures)
+        {
+            tiles[treasure.index].IsTreasure = true;
+        }
+        foreach (var poi in mRoomTemplate.pois)
+        {
+            tiles[poi.index].POIType = GameUtils.GetPOIType(poi.type);
         }
 
         return tiles;

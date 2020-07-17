@@ -1,0 +1,140 @@
+{
+  "dimensions": {
+    "width": 15,
+    "height": 10,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 18
+    },
+    {
+      "index": 24
+    },
+    {
+      "index": 33
+    },
+    {
+      "index": 36
+    },
+    {
+      "index": 39
+    },
+    {
+      "index": 48
+    },
+    {
+      "index": 51
+    },
+    {
+      "index": 54
+    },
+    {
+      "index": 55
+    },
+    {
+      "index": 56
+    },
+    {
+      "index": 57
+    },
+    {
+      "index": 63
+    },
+    {
+      "index": 66
+    },
+    {
+      "index": 69
+    },
+    {
+      "index": 78
+    },
+    {
+      "index": 81
+    },
+    {
+      "index": 84
+    },
+    {
+      "index": 86
+    },
+    {
+      "index": 87
+    },
+    {
+      "index": 88
+    },
+    {
+      "index": 93
+    },
+    {
+      "index": 96
+    },
+    {
+      "index": 99
+    },
+    {
+      "index": 108
+    },
+    {
+      "index": 111
+    },
+    {
+      "index": 114
+    },
+    {
+      "index": 115
+    },
+    {
+      "index": 116
+    },
+    {
+      "index": 117
+    },
+    {
+      "index": 126
+    }
+  ],
+  "enemyNests": [
+    {
+      "index": 70,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    },
+    {
+      "index": 73,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    },
+    {
+      "index": 100,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    },
+    {
+      "index": 103,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    }
+  ],
+  "pois": [
+    {
+      "index": 28,
+      "type": "TotemHealth"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 25
+    }
+  ]
+}

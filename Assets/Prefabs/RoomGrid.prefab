@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febca2c8b9cde7f4ebded254e2ad333f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomTemplatePath: Assets/Templates/sample_template.json
+  roomTemplatePath: C:\Users\panic\Dropbox\Semester Summer II 2020\Game_Programming\Lucid\Lucid\Assets\Templates\template_a.json
 --- !u!114 &6244463860786477467
 MonoBehaviour:
   m_ObjectHideFlags: 0

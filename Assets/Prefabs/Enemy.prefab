@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b36c861f5e194eb2a9ebbdb2bcfbcb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
+  cam: {fileID: 7309176335764160100, guid: 97cc1dda8a8f3e6469ec4cfeed28cd97, type: 3}
 --- !u!1 &8283197734025353315
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +291,6 @@ GameObject:
   - component: {fileID: 8283197734025353327}
   - component: {fileID: 8283197734025353324}
   - component: {fileID: 8283197734025353325}
-  - component: {fileID: 8283197734025353314}
   - component: {fileID: 7713569518180728411}
   m_Layer: 0
   m_Name: Enemy
@@ -309,7 +308,7 @@ Transform:
   m_GameObject: {fileID: 8283197734025353315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1996443392168361652}
   - {fileID: 8867649274314898325}
@@ -363,19 +362,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &8283197734025353314
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8283197734025353315}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7713569518180728411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,7 +374,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0c17906c9624981a9a6b5db9bc1ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingIndex: 67
   lineOfSight: 4
-  playerMovement: {fileID: 0}
   exclCanvas: {fileID: 3637340696145817047}

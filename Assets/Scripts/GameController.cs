@@ -11,23 +11,21 @@ public class GameController : MonoBehaviour
     private Camera combatCamera;
 
     private TileMap mTileMap;
-    private RoomGridGeneration mRoomGridGeneration;
-    private RoomGridMesh mRoomGridMesh;
-    private PlayerMovement mPlayerMovement;
-    private EnemyMovement mEnemyMovement;
+    private RoomGridGeneration mRoomGridGeneration; 
+    private PlayerMovement mPlayerMovement;  
     private bool inCombat;
-    private StartEncounter startEncounter;
+    private StartEncounter startEncounter; 
+    private EnemySpawner mEnemySpawner; 
 
     private void Awake()
     {
         // Get all references
         mTileMap = FindObjectOfType<TileMap>();
-        mRoomGridGeneration = FindObjectOfType<RoomGridGeneration>();
-        mRoomGridMesh = FindObjectOfType<RoomGridMesh>();
-        mPlayerMovement = FindObjectOfType<PlayerMovement>();
-        mEnemyMovement = FindObjectOfType<EnemyMovement>();
+        mRoomGridGeneration = FindObjectOfType<RoomGridGeneration>(); 
+        mPlayerMovement = FindObjectOfType<PlayerMovement>();  
         startEncounter = FindObjectOfType<StartEncounter>();
-        inCombat = false;
+        inCombat = false; 
+        mEnemySpawner = GetComponent<EnemySpawner>(); 
     }
 
     // Start is called before the first frame update
@@ -38,16 +36,19 @@ public class GameController : MonoBehaviour
         mainCamera.enabled = true;
 
         // Read game dimensions first
-        mRoomGridGeneration.ReadRoomDimensions();
+        var roomTemplate = mRoomGridGeneration.ReadRoomDimensions();
 
         // Generate the room 
         mTileMap.GenerateRoom();
 
         // Calculate player position
         mPlayerMovement.InitPosition();
+         
+        // Spawn enemies
+        mEnemySpawner.SpawnEnemies(roomTemplate);
 
-        // Calculate enemy position
-        mEnemyMovement.InitPosition();
+        // Tell the player about them
+        mPlayerMovement.FindEnemiesInScene();
     }
 
     private void Update()
@@ -73,6 +74,6 @@ public class GameController : MonoBehaviour
 
     public void StartCombat()
     {
-        inCombat = true;
+        inCombat = true; 
     }
 }
