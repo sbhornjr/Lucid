@@ -8,14 +8,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private uint startingIndex;
 
-
     private TileMap mTileMap;
 
     private uint mIndex;
 
+    private EnemyMovement[] mEnemyMovements;
+
+    [SerializeField]
+    private StartEncounter startEncounter;
+
     private void Awake()
     {
         mTileMap = FindObjectOfType<TileMap>();
+        mEnemyMovements = FindObjectsOfType<EnemyMovement>();
     }
      
     public void InitPosition()
@@ -52,6 +57,20 @@ public class PlayerMovement : MonoBehaviour
         {
             mIndex = nextIndex; 
             transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
+            foreach(EnemyMovement em in mEnemyMovements)
+            {
+                if (em != null)
+                {
+                    var enIndex = em.getTile();
+                    if (enIndex == mIndex) startEncounter.PlayerStartEncounter(em);
+                    else if (em.MoveEnemy() == mIndex) startEncounter.EnemyStartEncounter(em);
+                }
+            }
         }
-    } 
+    }
+
+    public uint getTile()
+    {
+        return mIndex;
+    }
 }
