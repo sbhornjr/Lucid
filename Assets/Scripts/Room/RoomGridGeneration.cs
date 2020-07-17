@@ -21,12 +21,16 @@ public class RoomGridGeneration : MonoBehaviour
     public RoomTemplate ReadRoomDimensions()
     {
         // Read the file into a JSON object
-        RoomTemplate roomTemplate;
-        using (var reader = new StreamReader(new FileStream(roomTemplatePath, FileMode.Open)))
-        {
-            var data = reader.ReadToEnd();
-            roomTemplate = JsonUtility.FromJson<RoomTemplate>(data);
-        }
+        RoomTemplate roomTemplate; 
+        var templateFile = Resources.Load<TextAsset>(roomTemplatePath);
+        roomTemplate = JsonUtility.FromJson<RoomTemplate>(templateFile.text);
+
+        // vvv OLD vvv
+        //using (var reader = new StreamReader(new FileStream(roomTemplatePath, FileMode.Open)))
+        //{
+        //    var data = reader.ReadToEnd();
+        //    roomTemplate = JsonUtility.FromJson<RoomTemplate>(data);
+        //}
 
         // Extract dimension data
         var dimensions = roomTemplate.dimensions; 
