@@ -386,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 6244463860786477466, guid: 1215229e723247c4dba1cb8300321344,
         type: 3}
       propertyPath: roomTemplatePath
-      value: C:\Users\panic\Documents\GitHub\TemplatedRoomMapTesting\Assets\Templates\test_none.json
+      value: C:\Users\panic\Dropbox\Semester Summer II 2020\Game_Programming\Lucid\Lucid\Assets\Templates\template_a.json
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1215229e723247c4dba1cb8300321344, type: 3}
