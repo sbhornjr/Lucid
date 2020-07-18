@@ -1,0 +1,298 @@
+{
+  "dimensions": {
+    "width": 20,
+    "height": 20,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 63
+    },
+    {
+      "index": 64
+    },
+    {
+      "index": 65
+    },
+    {
+      "index": 66
+    },
+    {
+      "index": 67
+    },
+    {
+      "index": 68
+    },
+    {
+      "index": 71
+    },
+    {
+      "index": 72
+    },
+    {
+      "index": 73
+    },
+    {
+      "index": 74
+    },
+    {
+      "index": 75
+    },
+    {
+      "index": 76
+    },
+    {
+      "index": 83
+    },
+    {
+      "index": 88
+    },
+    {
+      "index": 91
+    },
+    {
+      "index": 96
+    },
+    {
+      "index": 103
+    },
+    {
+      "index": 108
+    },
+    {
+      "index": 111
+    },
+    {
+      "index": 116
+    },
+    {
+      "index": 123
+    },
+    {
+      "index": 128
+    },
+    {
+      "index": 131
+    },
+    {
+      "index": 136
+    },
+    {
+      "index": 143
+    },
+    {
+      "index": 148
+    },
+    {
+      "index": 151
+    },
+    {
+      "index": 156
+    },
+    {
+      "index": 163
+    },
+    {
+      "index": 164
+    },
+    {
+      "index": 165
+    },
+    {
+      "index": 166
+    },
+    {
+      "index": 167
+    },
+    {
+      "index": 168
+    },
+    {
+      "index": 171
+    },
+    {
+      "index": 172
+    },
+    {
+      "index": 173
+    },
+    {
+      "index": 174
+    },
+    {
+      "index": 175
+    },
+    {
+      "index": 176
+    },
+    {
+      "index": 223
+    },
+    {
+      "index": 224
+    },
+    {
+      "index": 225
+    },
+    {
+      "index": 226
+    },
+    {
+      "index": 227
+    },
+    {
+      "index": 228
+    },
+    {
+      "index": 231
+    },
+    {
+      "index": 232
+    },
+    {
+      "index": 233
+    },
+    {
+      "index": 234
+    },
+    {
+      "index": 235
+    },
+    {
+      "index": 236
+    },
+    {
+      "index": 243
+    },
+    {
+      "index": 248
+    },
+    {
+      "index": 251
+    },
+    {
+      "index": 256
+    },
+    {
+      "index": 263
+    },
+    {
+      "index": 268
+    },
+    {
+      "index": 271
+    },
+    {
+      "index": 276
+    },
+    {
+      "index": 283
+    },
+    {
+      "index": 288
+    },
+    {
+      "index": 291
+    },
+    {
+      "index": 296
+    },
+    {
+      "index": 303
+    },
+    {
+      "index": 308
+    },
+    {
+      "index": 311
+    },
+    {
+      "index": 316
+    },
+    {
+      "index": 323
+    },
+    {
+      "index": 324
+    },
+    {
+      "index": 325
+    },
+    {
+      "index": 326
+    },
+    {
+      "index": 327
+    },
+    {
+      "index": 328
+    },
+    {
+      "index": 331
+    },
+    {
+      "index": 332
+    },
+    {
+      "index": 333
+    },
+    {
+      "index": 334
+    },
+    {
+      "index": 335
+    },
+    {
+      "index": 336
+    }
+  ],
+  "enemyNests": [
+    {
+      "index": 69,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    },
+    {
+      "index": 203,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    },
+    {
+      "index": 216,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    },
+    {
+      "index": 330,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 5
+    }
+  ],
+  "pois": [
+    {
+      "index": 38,
+      "type": "TotemHealth"
+    },
+    {
+      "index": 210,
+      "type": "TotemHealth"
+    },
+    {
+      "index": 361,
+      "type": "TotemHealth"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 378
+    }
+  ]
+}
