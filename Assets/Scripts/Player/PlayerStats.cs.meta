@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 85a6224976b1b43f882ee37e953fdc51
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weaponPrefab: {fileID: 3252898208910519103, guid: 13cf1da297e11114ea23aa13a1960281,
+      type: 3}
+  - weaponUIPrefab: {fileID: 2805315452946722662, guid: 2d3f4ad67f5414b208bcef7e6ebe9364,
+      type: 3}
+  - slider: {fileID: 1746339930079420504, guid: 6019a0f042b234bd0a5e3b188fefcaea,
+      type: 3}
+  - healthText: {fileID: 2754670237014564910, guid: ade0ed436ab2195529450a2c41d984da,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

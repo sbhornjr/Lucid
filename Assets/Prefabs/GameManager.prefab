@@ -1,0 +1,275 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4862292675033222454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4862292675033222457}
+  - component: {fileID: 4862292675033222456}
+  - component: {fileID: 4862292675033222461}
+  - component: {fileID: 4862292675033222458}
+  - component: {fileID: 4862292675033222459}
+  - component: {fileID: 4862292675033222460}
+  - component: {fileID: 4862292675033222463}
+  - component: {fileID: 4862292675033222462}
+  - component: {fileID: 1039661567}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4862292675033222457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.760719, y: 3.8771951, z: 4.1608686}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4862292675033222456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28238acd5271843fbbe054eb93943ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seed: 0
+  mainCamera: {fileID: 0}
+  combatCamera: {fileID: 0}
+  wonText: {fileID: 0}
+  lostText: {fileID: 0}
+  wonBackground: {fileID: 0}
+  startingLevel: 0
+  ignoreSeed: 1
+  saveMenu: {fileID: 0}
+  dialogBox: {fileID: 0}
+--- !u!114 &4862292675033222461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3beb474a0559146e79a8fa6c9aac0829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4862292675033222458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f92e813fe52846999bb385ab6e79114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4862292675033222459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2702fa06347a643de87734688d2e0fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatPlayer: {fileID: 0}
+  playerStats: {fileID: 0}
+  combatUI: {fileID: 0}
+  equipmentBarCanvas: {fileID: 0}
+  weaponUIPrefab: {fileID: 2805315452946722662, guid: 2d3f4ad67f5414b208bcef7e6ebe9364,
+    type: 3}
+  weaponPrefab: {fileID: 3252898208910519103, guid: 13cf1da297e11114ea23aa13a1960281,
+    type: 3}
+  lootUI: {fileID: 0}
+  combatCamera: {fileID: 0}
+  multiplierText: {fileID: 0}
+  synergySFX: {fileID: 8300000, guid: 2ac914db787429747810ab89a7ebfdf2, type: 3}
+  pauseMenu: {fileID: 0}
+  enemyCombatLocation: {fileID: 0}
+  regularCameraLocation: {fileID: 0}
+  bossCameraLocation: {fileID: 0}
+  combatScenes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dmgText: {fileID: 3016121344887856793, guid: c3ec59edd97224edc853a20caf014fba, type: 3}
+  dmgTextArea: {fileID: 0}
+--- !u!114 &4862292675033222460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583dadde44094404abdaf831aef8e4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs1:
+  - {fileID: 186294, guid: ac044d4d39e47894e847fd8fc0125a4b, type: 3}
+  - {fileID: 186294, guid: ac044d4d39e47894e847fd8fc0125a4b, type: 3}
+  - {fileID: 186294, guid: ac044d4d39e47894e847fd8fc0125a4b, type: 3}
+  - {fileID: 186294, guid: 4b53fc2144bc74d01b305ab40b64649f, type: 3}
+  - {fileID: 186294, guid: a7f21f68d57d24702be04a50a84d0900, type: 3}
+  enemyPrefabs2:
+  - {fileID: 4787729055419622173, guid: a206ef7c5cd3548ac81963a850ae2893, type: 3}
+  - {fileID: 4787729055419622173, guid: a206ef7c5cd3548ac81963a850ae2893, type: 3}
+  - {fileID: 4787729055419622173, guid: a206ef7c5cd3548ac81963a850ae2893, type: 3}
+  - {fileID: 4787729055419622173, guid: a95782af430a54c56ac057a6c4c34302, type: 3}
+  - {fileID: 4787729055419622173, guid: 614c6a0e4a3954dceb3d27970cac8ac4, type: 3}
+  enemyPrefabs3:
+  - {fileID: 4525256345008652917, guid: 4cafc5b05fafaec489e80a779d4608c8, type: 3}
+  - {fileID: 4525256345008652917, guid: 4cafc5b05fafaec489e80a779d4608c8, type: 3}
+  - {fileID: 4525256345008652917, guid: 4cafc5b05fafaec489e80a779d4608c8, type: 3}
+  - {fileID: 5443353276266738980, guid: 7bcb0b73b9a62f8428213166afb57f56, type: 3}
+  - {fileID: 5466987012585354178, guid: 59a66a23a007d114d9b4f8cb018e8bba, type: 3}
+  enemyPrefabsBoss:
+  - {fileID: 762200911778857371, guid: 9798a4afee5d545209ec069dc59245ac, type: 3}
+  - {fileID: 762200911778857371, guid: 9798a4afee5d545209ec069dc59245ac, type: 3}
+  - {fileID: 762200911778857371, guid: 9798a4afee5d545209ec069dc59245ac, type: 3}
+  treasureUninteractedPrefabs:
+  - {fileID: 1000011713842796, guid: ffd3e66d4df2a554fb995d41f7ffe4c2, type: 3}
+  treasureInteractedPrefabs:
+  - {fileID: 1000014099110386, guid: e097dc1b761606040a141ca558e64088, type: 3}
+  lavaParticleSystemPrefab: {fileID: 4733884355232343288, guid: f2a77b2d598e68c4ab009ad6dc6e5de5,
+    type: 3}
+  portalParticleSystemPrefab: {fileID: 4733884355232343288, guid: af4e39d6c2ecc254e8c57597c17a8a3c,
+    type: 3}
+  treasureParent: {fileID: 0}
+  poiParent: {fileID: 0}
+  enemyParent: {fileID: 0}
+  carParent: {fileID: 0}
+  propParent: {fileID: 4733884355232343288, guid: af4e39d6c2ecc254e8c57597c17a8a3c,
+    type: 3}
+  particleSystemParent: {fileID: 0}
+  poiVendorPrefabs:
+  - {fileID: 4787729055419622173, guid: 28c40373e83684b76b9e836f4714f06a, type: 3}
+  - {fileID: 4787729055419622173, guid: 28c40373e83684b76b9e836f4714f06a, type: 3}
+  - {fileID: 4787729055419622173, guid: 28c40373e83684b76b9e836f4714f06a, type: 3}
+  poiTotemGoldPrefabs:
+  - {fileID: 1183067708729545306, guid: 2e72d0f57e9904d928d187e705f5eb24, type: 3}
+  - {fileID: 1183067708729545306, guid: 2e72d0f57e9904d928d187e705f5eb24, type: 3}
+  - {fileID: 1183067708729545306, guid: 2e72d0f57e9904d928d187e705f5eb24, type: 3}
+  poiTotemHealthPrefabs:
+  - {fileID: 4021224933010149112, guid: 446134f089fa148bc842112f9ef79150, type: 3}
+  - {fileID: 4021224933010149112, guid: 446134f089fa148bc842112f9ef79150, type: 3}
+  - {fileID: 4021224933010149112, guid: 446134f089fa148bc842112f9ef79150, type: 3}
+  propDungeonPrefabs: []
+  propCityPrefabs: []
+  propHellPrefabs: []
+  carPrefab: {fileID: 8988942882417496759, guid: f23c003b042f87241881086d4de0a25e,
+    type: 3}
+  treasureUI: {fileID: 0}
+  healthTotemUI: {fileID: 0}
+  goldTotemUI: {fileID: 0}
+  vendorUI: {fileID: 0}
+  level1Background: {fileID: 2100000, guid: b84c0bcc7c28e447d998bbd71b71b916, type: 2}
+  level2Background: {fileID: 2100000, guid: d3d684be9bb2e4155b1a4337fdd3aa86, type: 2}
+  level3Background: {fileID: 2100000, guid: 374c4853f7b3a45dd8c0dfa18eb9096e, type: 2}
+  playerMovement: {fileID: 0}
+  weaponPrefab: {fileID: 3252898208910519103, guid: 13cf1da297e11114ea23aa13a1960281,
+    type: 3}
+--- !u!114 &4862292675033222463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aabe66eb55934734b9f9a4e2004b353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  menuUI: {fileID: 0}
+  pauseMenu: {fileID: 0}
+--- !u!114 &4862292675033222462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203799e286f2ebc46b350e40e3e78194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainPathLength: 6
+  totalNumberOfRooms: 12
+  desiredBranchLength: 3
+  totalNumberOfLoops: 0
+  desiredNone: 0
+  desiredVendor: 10
+  desiredTotemHealth: 0
+  desiredTotemGold: 0
+  desiredTotemMystery: 0
+  desiredTreasure: 3
+  ignoreSeed: 1
+  seed: 2
+  level1Templates:
+  - a
+  - template_diamond
+  - template_infinity
+  - template_m_shape
+  - template_upside_down_t_shape
+  - template_vertical_with_alcoves
+  - template_bird_new
+  - template_ghost
+  level2Templates:
+  - a
+  - template_diamond
+  - template_infinity
+  - template_m_shape
+  - template_upside_down_t_shape
+  - template_vertical_with_alcoves
+  - template_plus
+  - template_s_took_a_nap
+  level3Templates:
+  - a
+  - template_diamond
+  - template_infinity
+  - template_m_shape
+  - template_upside_down_t_shape
+  - template_vertical_with_alcoves
+  - template_lava_eight
+  - template_lava_emerald
+--- !u!114 &1039661567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862292675033222454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691c711b50ad92f4ca0c127008ecebf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -639,7 +639,10 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 0
+    Build: 0
+    Collab: 1
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -653,10 +656,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 7b1c5aa0-8d1f-44d9-b7ce-8fdf56dd880d
+  cloudProjectId: 2ff0c14d-d5eb-454e-b683-830570e5f912
   framebufferDepthMemorylessMode: 0
-  projectName: TemplatedRoomMapTesting
-  organizationId: panicattack013
+  projectName: Lucid
+  organizationId: sbhorn
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

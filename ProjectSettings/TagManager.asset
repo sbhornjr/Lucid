@@ -5,6 +5,23 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - CombatPlayer
+  - CombatUIWeapons
+  - PlayerWeapons
+  - NewWeaponUI
+  - OverworldUI
+  - SlotUnlocked
+  - EquipmentBar
+  - EquipmentBarCanvas
+  - EnemyParent
+  - WeaponParent
+  - Clicked
+  - NotEnoughGold
+  - ItemBar
+  - ItemClicked
+  - AlreadyMax
+  - UpgradeCost
+  - DialogueBox
   layers:
   - Default
   - TransparentFX

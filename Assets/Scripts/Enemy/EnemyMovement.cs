@@ -1,151 +1,235 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField]
-    private uint lineOfSight = 4;
-
-    private PlayerMovement mPlayerMovement;
+    private uint lineOfSight;
 
     [SerializeField]
-    private Canvas exclCanvas;
+    private Image excl;
 
-    private string moveType = "random";
-    private TileMap mTileMap;
-    private uint mIndex;
-    private System.Random rand;
-    private Direction facing;
+    [SerializeField]
+    private float movementSpeed = 2f;
 
+    [SerializeField]
+    private uint turnsInterestedInPlayer = 5;
+
+    [SerializeField]
+    private Transform eyes;
+
+    [SerializeField]
+    private uint fieldOfView;
+
+    private uint turnsFollowedPlayer = 0;
+    private bool followingPlayer = false;
+
+    public uint Index { get; private set; }
+
+    public bool IsEnemyAlive { get; set; }
+
+    private float halfHeight;
+
+    private LevelManager levelManager;
+
+    private uint nextIndex;
+    private Vector3 destination;
+
+    private Vector3 movementStart;
+    private float movementInterpolant;
+
+    private GameObject player;
+
+    private Animator anim;
     private void Awake()
     {
-        mPlayerMovement = FindObjectOfType<PlayerMovement>();
+        levelManager = FindObjectOfType<LevelManager>();
 
-        mTileMap = FindObjectOfType<TileMap>();
-        mIndex = mTileMap.GetIndexOfTileAt(transform.position);
+        halfHeight = GetComponent<MeshRenderer>().bounds.extents.y;
 
-        rand = new System.Random();
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        anim = GetComponent<Animator>();
+
+        IsEnemyAlive = true;
     } 
 
-    public uint MoveEnemy()
-    {
-        if (CheckLoS())
-        {
-            moveType = "follow";
-            exclCanvas.gameObject.SetActive(true);
-        }
+    public void InitPosition(uint index)
+    { 
+        Index = index;
 
-        if (moveType == "random") MoveRandom();
-        if (moveType == "follow") FollowPlayer();
-
-        return mIndex;
+        transform.position = GameUtils.GetPosition(this.Index) + (Vector3.up * halfHeight);
     }
 
-    private void FollowPlayer()
+    public uint? ComputeNextPosition(ISet<uint> indices)
     {
-        var playerTile = mTileMap.GetCenterPositionOfTileAt(mPlayerMovement.GetTile());
-        var moveToIndex = mIndex;
-        var direction = facing;
-        var minDistance = Mathf.Infinity;
+        // Default to no motion and override if appropriate
+        movementInterpolant = 1;
+        movementStart = transform.position;
 
-        Direction[] dirs = new Direction[] { Direction.N, Direction.E, Direction.S, Direction.W };
-
-        foreach(Direction dir in dirs)
+        if (!followingPlayer)
         {
-            if (mTileMap.TryMoveToNeighbor(mIndex, dir, out var nextIndex))
+            FollowPlayerIfVisible();
+        }
+
+        // Sometimes, stay where we are
+        if (UnityEngine.Random.value < 0.2f && !indices.Contains(Index) && !followingPlayer)
+        {
+            nextIndex = Index; 
+            destination = transform.position;
+            return nextIndex;
+        }
+        else
+        {
+            // If following player, order directions towards players location. Otherwise, move randomly
+            var dirs = (Direction[])Enum.GetValues(typeof(Direction));
+            List<Direction> orderedDirs = GetDirectionOrder(dirs, followingPlayer);
+
+            foreach (var dir in orderedDirs)
             {
-                var distance = Vector3.Distance(playerTile, mTileMap.GetCenterPositionOfTileAt(nextIndex));
-                if (distance < minDistance)
+                if (levelManager.EntityCanMoveTo(Index, dir, out var maybeNextIndex) && !indices.Contains(maybeNextIndex))
                 {
-                    direction = dir;
-                    minDistance = distance;
-                    moveToIndex = nextIndex;
+                    nextIndex = maybeNextIndex;
+                    movementStart = transform.position;
+                    movementInterpolant = 0;
+                    destination = GameUtils.GetPosition(nextIndex);
+                    return nextIndex;
                 }
             }
-        }
-
-        if (minDistance != Mathf.Infinity)
-        {
-            facing = direction;
-            mIndex = moveToIndex;
-            transform.LookAt(mTileMap.GetCenterPositionOfTileAt(mIndex));
-            transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
-        }
-    }
-
-    private void MoveRandom()
-    {
-        int dir = rand.Next(4);
-
-        Direction direction;
-        bool stay = false;
-
-        switch (dir)
-        {
-            case 0:
-                direction = Direction.N;
-                break;
-            case 1:
-                direction = Direction.E;
-                break;
-            case 2:
-                direction = Direction.S;
-                break;
-            case 3:
-                direction = Direction.W;
-                break;
-            default:
-                stay = true;
-                direction = Direction.N;
-                break;
-        }
-
-        if (!stay)
-        {
-            if (mTileMap.TryMoveToNeighbor(mIndex, direction, out var nextIndex))
+            if (!indices.Contains(Index))
             {
-                facing = direction;
-                mIndex = nextIndex;
-                transform.LookAt(mTileMap.GetCenterPositionOfTileAt(mIndex));
-                transform.position = mTileMap.GetCenterPositionOfTileAt(mIndex);
-
-                if (CheckLoS())
-                {
-                    moveType = "follow";
-                }
+                nextIndex = Index;
+                destination = transform.position;
+                return nextIndex;
             }
+            return null;
         }
     }
-     
-    private bool CheckLoS()
+
+    private void FollowPlayerIfVisible()
     {
-        var checkIndex = mIndex;
-        for (int i = 0; i < lineOfSight; ++i)
+        if (PlayerVisible())
         {
-            if (mTileMap.TryMoveToNeighbor(checkIndex, facing, out var nextIndex))
+            turnsFollowedPlayer = 0;
+            followingPlayer = true;
+            ToggleExcl(true);
+        }
+        else
+        {
+            followingPlayer = false;
+            ToggleExcl(false);
+        }
+    }
+
+    private bool PlayerVisible()
+    {
+        RaycastHit hit;
+        Vector3 directionToPlayer = player.transform.position - eyes.position;
+
+        if (Vector3.Angle(directionToPlayer, eyes.forward) <= fieldOfView)
+        {
+            if (Physics.Raycast(eyes.position, directionToPlayer, out hit, lineOfSight))
             {
-                if (mPlayerMovement.GetTile() == nextIndex)
+                if (hit.collider.CompareTag("Player"))
                 {
                     return true;
                 }
-                else
-                {
-                    checkIndex = nextIndex;
-                }
+                return false;
             }
+            return false;
         }
         return false;
     }
 
+    private List<Direction> GetDirectionOrder(Direction[] dirs, bool followingPlayer)
+    {
+        List<Direction> output = new List<Direction>();
+        List<float> outputAdjacency = new List<float>();
+
+        // Order directions based on which direction gets to player sooner
+        if (followingPlayer)
+        {
+            foreach (Direction dir in dirs)
+            {
+                if (levelManager.EntityCanMoveTo(Index, dir, out var nextIndex))
+                {
+                    var distance = Vector3.Distance(GameUtils.GetPosition(nextIndex), player.transform.position);
+
+                    if (outputAdjacency.Count == 0)
+                    {
+                        outputAdjacency.Add(distance);
+                        output.Add(dir);
+                    }
+                    else
+                    {
+                        int placement = outputAdjacency.Count;
+
+                        for (int i = 0; i < outputAdjacency.Count; i++)
+                        {
+                            if (distance < outputAdjacency[i])
+                            {
+                                placement = i;
+                                break;
+                            }
+                        }
+                        outputAdjacency.Insert(placement, distance);
+                        output.Insert(placement, dir);
+                    }
+                }
+            }
+            return output;
+        }
+        // if isnt chasing player, move randomly
+        else
+        {
+            return dirs.OrderBy(d => UnityEngine.Random.value).ToList<Direction>();
+        }
+    }
+
+    public bool Move()
+    {
+        anim.SetBool("animMoving", true);
+        transform.LookAt(destination);
+        movementInterpolant += movementSpeed * Time.deltaTime;
+        transform.position = Vector3.Lerp(movementStart, destination, movementInterpolant);
+
+        bool isDone = Vector3.Distance(transform.position, destination) < 0.05f;
+
+        if (isDone)
+        {
+            // Incrememnt turns followed player if following player, and stop following if becomes disinterested
+            if (followingPlayer)
+            {
+                turnsFollowedPlayer += 1;
+            }
+            if (turnsFollowedPlayer >= turnsInterestedInPlayer)
+            {
+                followingPlayer = false;
+                ToggleExcl(false);
+                turnsFollowedPlayer = 0;
+
+            }
+            Index = nextIndex;
+
+            anim.SetBool("animMoving", false);
+
+            if (!followingPlayer)
+                FollowPlayerIfVisible();
+        }
+
+        return isDone;
+    }
+
     public uint GetTile()
     {
-        return mIndex;
+        return Index;
     }
 
     public void ToggleExcl(bool which)
     {
-        exclCanvas.gameObject.SetActive(which);
+        excl.enabled = which;
     }
 }

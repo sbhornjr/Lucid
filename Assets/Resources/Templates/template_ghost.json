@@ -1,0 +1,516 @@
+{
+  "dimensions": {
+    "width": 15,
+    "height": 15,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 4
+    },
+    {
+      "index": 5
+    },
+    {
+      "index": 7
+    },
+    {
+      "index": 8
+    },
+    {
+      "index": 9
+    },
+    {
+      "index": 19
+    },
+    {
+      "index": 24
+    },
+    {
+      "index": 33
+    },
+    {
+      "index": 34
+    },
+    {
+      "index": 36
+    },
+    {
+      "index": 37
+    },
+    {
+      "index": 39
+    },
+    {
+      "index": 45
+    },
+    {
+      "index": 46
+    },
+    {
+      "index": 47
+    },
+    {
+      "index": 48
+    },
+    {
+      "index": 54
+    },
+    {
+      "index": 55
+    },
+    {
+      "index": 60
+    },
+    {
+      "index": 67
+    },
+    {
+      "index": 70
+    },
+    {
+      "index": 71
+    },
+    {
+      "index": 72
+    },
+    {
+      "index": 73
+    },
+    {
+      "index": 74
+    },
+    {
+      "index": 78
+    },
+    {
+      "index": 81
+    },
+    {
+      "index": 83
+    },
+    {
+      "index": 86
+    },
+    {
+      "index": 90
+    },
+    {
+      "index": 91
+    },
+    {
+      "index": 92
+    },
+    {
+      "index": 93
+    },
+    {
+      "index": 101
+    },
+    {
+      "index": 104
+    },
+    {
+      "index": 108
+    },
+    {
+      "index": 109
+    },
+    {
+      "index": 111
+    },
+    {
+      "index": 112
+    },
+    {
+      "index": 113
+    },
+    {
+      "index": 119
+    },
+    {
+      "index": 124
+    },
+    {
+      "index": 130
+    },
+    {
+      "index": 131
+    },
+    {
+      "index": 132
+    },
+    {
+      "index": 133
+    },
+    {
+      "index": 134
+    },
+    {
+      "index": 138
+    },
+    {
+      "index": 139
+    },
+    {
+      "index": 141
+    },
+    {
+      "index": 143
+    },
+    {
+      "index": 145
+    },
+    {
+      "index": 152
+    },
+    {
+      "index": 153
+    },
+    {
+      "index": 157
+    },
+    {
+      "index": 160
+    },
+    {
+      "index": 166
+    },
+    {
+      "index": 167
+    },
+    {
+      "index": 168
+    },
+    {
+      "index": 174
+    },
+    {
+      "index": 175
+    },
+    {
+      "index": 180
+    },
+    {
+      "index": 181
+    },
+    {
+      "index": 183
+    },
+    {
+      "index": 186
+    },
+    {
+      "index": 187
+    },
+    {
+      "index": 188
+    },
+    {
+      "index": 189
+    },
+    {
+      "index": 195
+    },
+    {
+      "index": 200
+    },
+    {
+      "index": 201
+    },
+    {
+      "index": 210
+    },
+    {
+      "index": 211
+    },
+    {
+      "index": 212
+    },
+    {
+      "index": 214
+    },
+    {
+      "index": 215
+    }
+  ],
+  "nones": [
+    {
+      "index": 0
+    },
+    {
+      "index": 1
+    },
+    {
+      "index": 2
+    },
+    {
+      "index": 3
+    },
+    {
+      "index": 10
+    },
+    {
+      "index": 11
+    },
+    {
+      "index": 12
+    },
+    {
+      "index": 13
+    },
+    {
+      "index": 14
+    },
+    {
+      "index": 15
+    },
+    {
+      "index": 16
+    },
+    {
+      "index": 17
+    },
+    {
+      "index": 18
+    },
+    {
+      "index": 25
+    },
+    {
+      "index": 26
+    },
+    {
+      "index": 27
+    },
+    {
+      "index": 28
+    },
+    {
+      "index": 29
+    },
+    {
+      "index": 30
+    },
+    {
+      "index": 31
+    },
+    {
+      "index": 32
+    },
+    {
+      "index": 40
+    },
+    {
+      "index": 41
+    },
+    {
+      "index": 42
+    },
+    {
+      "index": 43
+    },
+    {
+      "index": 44
+    },
+    {
+      "index": 56
+    },
+    {
+      "index": 57
+    },
+    {
+      "index": 58
+    },
+    {
+      "index": 59
+    },
+    {
+      "index": 105
+    },
+    {
+      "index": 106
+    },
+    {
+      "index": 107
+    },
+    {
+      "index": 120
+    },
+    {
+      "index": 121
+    },
+    {
+      "index": 122
+    },
+    {
+      "index": 123
+    },
+    {
+      "index": 135
+    },
+    {
+      "index": 136
+    },
+    {
+      "index": 137
+    },
+    {
+      "index": 146
+    },
+    {
+      "index": 147
+    },
+    {
+      "index": 148
+    },
+    {
+      "index": 149
+    },
+    {
+      "index": 150
+    },
+    {
+      "index": 151
+    },
+    {
+      "index": 161
+    },
+    {
+      "index": 162
+    },
+    {
+      "index": 163
+    },
+    {
+      "index": 164
+    },
+    {
+      "index": 165
+    },
+    {
+      "index": 176
+    },
+    {
+      "index": 177
+    },
+    {
+      "index": 178
+    },
+    {
+      "index": 179
+    },
+    {
+      "index": 190
+    },
+    {
+      "index": 191
+    },
+    {
+      "index": 192
+    },
+    {
+      "index": 193
+    },
+    {
+      "index": 194
+    },
+    {
+      "index": 202
+    },
+    {
+      "index": 203
+    },
+    {
+      "index": 204
+    },
+    {
+      "index": 205
+    },
+    {
+      "index": 206
+    },
+    {
+      "index": 207
+    },
+    {
+      "index": 208
+    },
+    {
+      "index": 209
+    },
+    {
+      "index": 216
+    },
+    {
+      "index": 217
+    },
+    {
+      "index": 218
+    },
+    {
+      "index": 219
+    },
+    {
+      "index": 220
+    },
+    {
+      "index": 221
+    },
+    {
+      "index": 222
+    },
+    {
+      "index": 223
+    },
+    {
+      "index": 224
+    }
+  ],
+  "enemyNests": [
+    {
+      "index": 82,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 2
+    },
+    {
+      "index": 142,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 2
+    }
+  ],
+  "pois": [
+    {
+      "index": 127,
+      "type": "Vendor"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 97
+    }
+  ],
+  "doors": [
+    {
+      "index": 6,
+      "direction": "N"
+    },
+    {
+      "index": 75,
+      "direction": "W"
+    },
+    {
+      "index": 89,
+      "direction": "E"
+    },
+    {
+      "index": 213,
+      "direction": "S"
+    }
+  ],
+  "lavas": []
+}

@@ -1,0 +1,152 @@
+{
+  "dimensions": {
+    "width": 11,
+    "height": 11,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 0
+    },
+    {
+      "index": 1
+    },
+    {
+      "index": 2
+    },
+    {
+      "index": 3
+    },
+    {
+      "index": 4
+    },
+    {
+      "index": 6
+    },
+    {
+      "index": 7
+    },
+    {
+      "index": 8
+    },
+    {
+      "index": 9
+    },
+    {
+      "index": 10
+    },
+    {
+      "index": 11
+    },
+    {
+      "index": 21
+    },
+    {
+      "index": 22
+    },
+    {
+      "index": 32
+    },
+    {
+      "index": 33
+    },
+    {
+      "index": 43
+    },
+    {
+      "index": 44
+    },
+    {
+      "index": 54
+    },
+    {
+      "index": 66
+    },
+    {
+      "index": 76
+    },
+    {
+      "index": 77
+    },
+    {
+      "index": 87
+    },
+    {
+      "index": 88
+    },
+    {
+      "index": 98
+    },
+    {
+      "index": 99
+    },
+    {
+      "index": 109
+    },
+    {
+      "index": 110
+    },
+    {
+      "index": 111
+    },
+    {
+      "index": 112
+    },
+    {
+      "index": 113
+    },
+    {
+      "index": 114
+    },
+    {
+      "index": 116
+    },
+    {
+      "index": 117
+    },
+    {
+      "index": 118
+    },
+    {
+      "index": 119
+    },
+    {
+      "index": 120
+    }
+  ],
+  "nones": [],
+  "enemyNests": [],
+  "pois": [
+    {
+      "index": 100,
+      "type": "Vendor"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 20
+    }
+  ],
+  "doors": [
+    {
+      "index": 5,
+      "direction": "N"
+    },
+    {
+      "index": 55,
+      "direction": "W"
+    },
+    {
+      "index": 65,
+      "direction": "E"
+    },
+    {
+      "index": 115,
+      "direction": "S"
+    }
+  ],
+  "portal": {
+    "index": 60
+  },
+  "lavas": []
+}

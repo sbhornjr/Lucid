@@ -1,0 +1,164 @@
+{
+  "dimensions": {
+    "width": 12,
+    "height": 7,
+    "tileSize": 4
+  },
+  "walls": [
+    {
+      "index": 0
+    },
+    {
+      "index": 2
+    },
+    {
+      "index": 3
+    },
+    {
+      "index": 4
+    },
+    {
+      "index": 5
+    },
+    {
+      "index": 6
+    },
+    {
+      "index": 7
+    },
+    {
+      "index": 8
+    },
+    {
+      "index": 9
+    },
+    {
+      "index": 10
+    },
+    {
+      "index": 11
+    },
+    {
+      "index": 16
+    },
+    {
+      "index": 23
+    },
+    {
+      "index": 24
+    },
+    {
+      "index": 28
+    },
+    {
+      "index": 35
+    },
+    {
+      "index": 36
+    },
+    {
+      "index": 40
+    },
+    {
+      "index": 43
+    },
+    {
+      "index": 47
+    },
+    {
+      "index": 48
+    },
+    {
+      "index": 55
+    },
+    {
+      "index": 59
+    },
+    {
+      "index": 60
+    },
+    {
+      "index": 67
+    },
+    {
+      "index": 72
+    },
+    {
+      "index": 73
+    },
+    {
+      "index": 74
+    },
+    {
+      "index": 75
+    },
+    {
+      "index": 76
+    },
+    {
+      "index": 77
+    },
+    {
+      "index": 78
+    },
+    {
+      "index": 79
+    },
+    {
+      "index": 80
+    },
+    {
+      "index": 81
+    },
+    {
+      "index": 83
+    }
+  ],
+  "nones": [],
+  "enemyNests": [
+    {
+      "index": 17,
+      "spawnRadius": 3,
+      "spawnChance": 1.0,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 2
+    },
+    {
+      "index": 66,
+      "spawnRadius": 3,
+      "spawnChance": 0.5,
+      "spawnAttemptsMin": 2,
+      "spawnAttemptsMax": 2
+    }
+  ],
+  "pois": [
+    {
+      "index": 39,
+      "type": "Vendor"
+    }
+  ],
+  "treasures": [
+    {
+      "index": 44
+    }
+  ],
+  "doors": [
+    {
+      "index": 1,
+      "direction": "N"
+    },
+    {
+      "index": 12,
+      "direction": "W"
+    },
+    {
+      "index": 71,
+      "direction": "E"
+    },
+    {
+      "index": 82,
+      "direction": "S"
+    }
+  ],
+  "lavas": []
+}

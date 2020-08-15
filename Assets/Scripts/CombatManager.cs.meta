@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 2702fa06347a643de87734688d2e0fd1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - combatPlayer: {fileID: 1024860913751546, guid: 194f8fbf67729fd40936b3465af2cc47,
+      type: 3}
+  - playerStats: {instanceID: 0}
+  - combatUI: {fileID: 2701650253540553386, guid: a136ce1765c284f35aa5cbf46721bd5c,
+      type: 3}
+  - equipmentBar: {fileID: 1786882969471494437, guid: 900226a55acf8066db0dd83710c09b68,
+      type: 3}
+  - equipmentSlot: {fileID: 4210522841963563534, guid: d4bc7c1f8e6dd9830ada4ccec5a3f100,
+      type: 3}
+  - equipmentContent: {fileID: 1925198187002969979, guid: 0cd5756bd69e2cad1ae0dd4725cd0539,
+      type: 3}
+  - weaponUIPrefab: {fileID: 2805315452946722662, guid: 2d3f4ad67f5414b208bcef7e6ebe9364,
+      type: 3}
+  - weaponPrefab: {fileID: 3252898208910519103, guid: 13cf1da297e11114ea23aa13a1960281,
+      type: 3}
+  - lootUI: {fileID: 1335113547647956, guid: 6104b2bc01dddca48a0d94ec2ef4d3c3, type: 3}
+  - combatCamera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

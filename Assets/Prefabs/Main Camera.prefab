@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649448e8bb140c943b689c7105800416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followPlayer: 1
-  worldViewPosition: {x: 65, y: 80, z: 40}
-  worldViewRotation: {x: 90, y: 0, z: 0}
-  followPlayerOffset: {x: 0, y: 20, z: 0}
+  followOffset: 2
+  xTiltAngle: 20
+  yOffset: 2
