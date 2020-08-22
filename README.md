@@ -1,3 +1,1 @@
-LUCID: CS540 Final Project
-
-IMPORTANT: Put all heavy assets into the Assets/Heavy folder so they don't contribute to heavy git metagarbage!
+Lucid is a 3D turn-based roguelike video game that can be played at https://stevenhorn.itch.io/lucid
